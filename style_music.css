@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+:root {
+  --bg-1: #0b1020;
+  --bg-2: #111827;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-2: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.14);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.65);
+  --accent: #ff3d8d;
+  --accent-2: #7c3aed;
+  --ring: rgba(255, 61, 141, 0.35);
+  --shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      900px circle at 20% 10%,
+      rgba(124, 58, 237, 0.22) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      700px circle at 80% 20%,
+      rgba(255, 61, 141, 0.18) 0%,
+      transparent 55%
+    ),
+    linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  color: var(--text);
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Keep both spellings so existing HTML still works */
+.music-player,
+.music-palyer {
+  width: min(420px, 100%);
+  padding: 26px 26px 22px;
+  text-align: center;
+  border-radius: 26px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.04)
+  );
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+nav .circle {
+  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease;
+}
+
+nav .circle:hover {
+  background: var(--surface-2);
+  transform: translateY(-1px);
+}
+
+.song-img {
+  width: 210px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 8px solid rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.06),
+    0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+.music-player h1,
+.music-palyer h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 18px;
+  letter-spacing: 0.2px;
+}
+
+.music-player p,
+.music-palyer p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+audio {
+  width: 100%;
+  margin-top: 14px;
+  margin-bottom: 10px;
+}
+
+#progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  cursor: pointer;
+  margin: 22px 0 18px;
+  outline: none;
+}
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 40px var(--ring);
+}
+
+#progress::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 40px var(--ring);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.controls i {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease;
+}
+
+.controls i:hover {
+  background: var(--surface-2);
+  transform: translateY(-1px);
+}
+
+.controls .play {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 18px 50px var(--ring);
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    filter 160ms ease;
+}
+
+.controls .play:hover {
+  transform: translateY(-1px) scale(1.02);
+  filter: brightness(1.03);
+}
+
+.controls .play i {
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: rgba(10, 16, 32, 0.95);
+  font-size: 20px;
+}
