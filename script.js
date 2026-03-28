@@ -18,7 +18,7 @@ let songs = [
   },
   {
     songName: "Desi Kalakaar",
-    src: "audio/Desi Kalakaar (128 kbps).mp3", // ✅ fixed
+    src: "audio/Desi Kalakaar (128 kbps).mp3",
     img: "images/Desi-Kalakaar-Hindi-2014-500x500.jpg",
   },
   {
