@@ -55,7 +55,7 @@ body {
   padding: 24px;
 }
 
-/* Keep both spellings so existing HTML still works */
+
 .music-player,
 .music-palyer {
   width: min(420px, 100%);
@@ -113,7 +113,7 @@ nav .circle:hover {
     0 0 0 6px rgba(255, 255, 255, 0.06),
     0 25px 70px rgba(0, 0, 0, 0.45);
 
-  animation: rotate 5s linear infinite; /* 🔥 THIS LINE */
+  animation: rotate 5s linear infinite;
     animation-play-state: paused;
 }
 
