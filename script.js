@@ -61,7 +61,7 @@ playBtn.addEventListener("click", () => {
   }
 });
 
-// Next song
+
 next.addEventListener("click", () => {
     songIndex++;
     if(songIndex >= songs.length) {
@@ -73,7 +73,7 @@ next.addEventListener("click", () => {
     playIcon.classList.add("fa-pause");
 })
 
-// Previous song
+
 prev.addEventListener("click", () => {
   songIndex--;
 
